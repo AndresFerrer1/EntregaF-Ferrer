@@ -124,3 +124,24 @@ def buscarparticipante2(req):
         # return render(HttpResponse(f'No enviaste datos'))
 
         # return HttpResponse(f'No enviaste datos')
+
+def buscareventosugerido(req):
+
+    return render(req, 'ProyectoBlogApp/buscareventosug.html')
+
+def buscareventosug2(req):
+
+    if(req.method == "GET"):
+
+        nombre = req.GET['nombre']
+        plataforma = EventoSugerido.objects.filter (nombre=nombre)
+
+        return render(req, "ProyectoBlogApp/resultadobusqeventosug.html", {'nombre': nombre, 'plataforma': plataforma})
+
+    else:
+
+        return render(req, 'ProyectoBlogApp/errorformulario.html')
+
+        # return render(HttpResponse(f'No enviaste datos'))
+
+        # return HttpResponse(f'No enviaste datos')

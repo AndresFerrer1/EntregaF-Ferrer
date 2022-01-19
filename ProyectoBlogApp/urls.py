@@ -19,4 +19,6 @@ urlpatterns = [
     path('buscar/', views.buscar, name="buscar"),
     path('errorformulario/', views.errorformulario, name="errorformulario"),
     path('agradecimiento/', views.agradecimiento, name="agradecimiento"),
+    path('buscareventosugerido/', views.buscareventosugerido, name="buscareventosugerido"),
+    path('buscareventosug2/', views.buscareventosug2, name="buscareventosug2"),
 ]
