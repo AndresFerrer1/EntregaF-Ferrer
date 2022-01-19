@@ -91,10 +91,31 @@ def buscar(req):
 
     if(req.method == "GET"):
 
-        nro_evento = req.GET['nombre']
-        nombre = Evento.objects.filter (nro_evento=nro_evento)
+        nombre = req.GET['nombre']
+        plataforma = Evento.objects.filter (nombre=nombre)
 
-        return render(req, "ProyectoBlogApp/resultadobusquedaevento.html", {'nombre': nombre, 'nro_evento': nro_evento})
+        return render(req, "ProyectoBlogApp/resultadobusquedaevento.html", {'nombre': nombre, 'plataforma': plataforma})
+
+    else:
+
+        return render(req, 'ProyectoBlogApp/errorformulario.html')
+
+        # return render(HttpResponse(f'No enviaste datos'))
+
+        # return HttpResponse(f'No enviaste datos')
+
+def buscarparticipante(req):
+
+    return render(req, 'ProyectoBlogApp/buscarparticipante.html')
+
+def buscarparticipante2(req):
+
+    if(req.method == "GET"):
+
+        nombre = req.GET['nombre']
+        apellido = Participante.objects.filter (nombre=nombre)
+
+        return render(req, "ProyectoBlogApp/resultadobusqparticipante.html", {'nombre': nombre, 'apellido': apellido})
 
     else:
 

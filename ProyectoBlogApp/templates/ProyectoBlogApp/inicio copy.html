@@ -1,4 +1,4 @@
-{% extends 'ProyectoBlogApp/padre2.html' %}
+{% extends 'ProyectoBlogApp/padre.html' %}
 
 {% load static %}
 
@@ -13,21 +13,12 @@
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
-                    <h2 class="display-4">Eventos disponibles actualmente</h2>
-                    
-                    <p>Eventos disponibles actualmente</p>
-                        
-                    <ul>
-                        {% for eventos in lista %}
-                            <li>Evento N: {{eventos.nro_evento}} - {{eventos.nombre}}</li>        
-                        {% endfor %}
-                        </ul>
-
-                    
+                    <h2 class="display-4">Para los amantes de los Videojuegos</h2>
+                    <p>Se parte del mayor conglomerado de eventos competitivos de videojuegos. Demuestra tus habilidades. Se parte de la acción y gana increibles premios. Además del prestigio de ganarle a los mejores.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+    
 {% endblock %}

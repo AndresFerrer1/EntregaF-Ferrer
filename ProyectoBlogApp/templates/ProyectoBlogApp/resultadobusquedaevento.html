@@ -16,13 +16,14 @@
 
                     <p>Resultado de busqueda de eventos:</p>
 
-                    {% if nombre %}
+                    {% if plataforma %}
 
                         <ul>
                             
-                            {% for nombres in nombre %}
+                            {% for nombres in plataforma %}
                                 <li>
                                     {{nombres}}
+                                    <p>Fecha de inicio del event: {{nombres.fechaDeInicio}}</p>
                                 </li>
                             {% endfor %}
                                 

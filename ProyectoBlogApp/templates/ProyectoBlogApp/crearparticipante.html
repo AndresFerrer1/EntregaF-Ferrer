@@ -10,6 +10,23 @@
         <div class="container px-5">
             <h1 class="masthead-heading mb-0">Participa</h1>
             <h3 class="text-center">Completa tus datos para registrate en tu evento favorito.</h3>
+
+            {% if form.errors %}
+            <p style="color: red;">Los datos son incorrectos</p>        
+        {% endif %}
+            
+    
+        <form action="/ProyectoBlogApp/crearparticipante/" method="post">{% csrf_token %}
+    
+            <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
+    
+            <p>Apellido: <input type="text" name="apellido" id="apellido"></p>
+    
+            <p>Email: <input type="email" name="email" id="email"></p>
+    
+            <p>Nombre del evento: <input type="text" name="evento" id="evento"></p>
+        
+            <input type="submit" value="Crear" />
             </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -20,22 +37,25 @@
 
 <body>
     
-    {% if form.errors %}
-        <p style="color: red;">Los datos son incorrectos</p>        
-    {% endif %}
-        
-
-    <form action="/ProyectoBlogApp/crearparticipante/" method="post">{% csrf_token %}
-
-        <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
-
-        <p>Apellido: <input type="text" name="apellido" id="apellido"></p>
-
-        <p>Email: <input type="email" name="email" id="email"></p>
-
-        <p>Nombre del evento: <input type="text" name="evento" id="evento"></p>
-    
-        <input type="submit" value="Crear" />
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'ProyectoBlogApp/assets/img/04.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Eventos y Plataformas disponibles</h2>
+                        <p>Conoce mas sobre las plataformas y eventos disponibles.</p>
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'evento' %}">Eventos Disponibles</a>
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'plataforma' %}">Todas las Plataformas</a>
+                    
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 

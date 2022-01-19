@@ -13,21 +13,26 @@
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
-                    <h2 class="display-4">Eventos disponibles actualmente</h2>
-                    
-                    <p>Eventos disponibles actualmente</p>
-                        
-                    <ul>
-                        {% for eventos in lista %}
-                            <li>Evento N: {{eventos.nro_evento}} - {{eventos.nombre}}</li>        
-                        {% endfor %}
+
+                    <p>Resultado de busqueda de participantes:</p>
+
+                    {% if apellido %}
+
+                        <ul>
+                            
+                            {% for nombres in apellido %}
+                                <li>
+                                    {{nombres}}
+                                </li>
+                            {% endfor %}
+                                
                         </ul>
 
-                    
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+    
 {% endblock %}

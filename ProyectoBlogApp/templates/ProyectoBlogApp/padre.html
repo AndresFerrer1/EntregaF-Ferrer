@@ -27,12 +27,13 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'eventoformulario' %}">Eventos</a></li>
+                        
                         <li class="nav-item"><a class="nav-link" href="{% url 'crearparticipante' %}">Inscripcion a Evento</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'plataforma' %}">Plataformas disponibles</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'evento' %}">Eventos Disponibles</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'buscarevento' %}">Busqueda de Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'buscarparticipante' %}">Busqueda de Participantes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'eventoformulario' %}">Sugerir Eventos</a></li>
                     </ul>
                 </div>
             </div>
