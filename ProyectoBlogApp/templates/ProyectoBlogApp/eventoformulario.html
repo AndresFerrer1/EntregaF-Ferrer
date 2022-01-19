@@ -1,0 +1,61 @@
+{% extends 'ProyectoBlogApp/padre2.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">¿Que evento quieres agregar?</h1>
+            <h3 class="text-center">Sugiere un evento y la plataforma para jugarlo</h3>
+            </div>
+            {% if form.errors %}
+            <p style="color: red;">Los datos son incorrectos</p>        
+        {% endif %}
+            
+    
+        <form action="/ProyectoBlogApp/eventoformulario/" method="post">{% csrf_token %}
+    
+            <p>Nombre del evento: <input type="text" name="nombre" id="nombre"></p>
+    
+            <p>Plataforma de juegos: <input type="text" name="plataforma" id="plataforma"></p>
+        
+            <input type="submit" value="Enviar" />
+         
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>    
+</header>
+
+<body>
+
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'ProyectoBlogApp/assets/img/04.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Plataformas de juegos disponibles actualmente</h2>
+                        
+                        <p>Plataformas de juegos disponibles actualmente</p>
+                            
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'plataforma' %}">Todas las Plataformas</a>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+    
+    {% endblock %}
+

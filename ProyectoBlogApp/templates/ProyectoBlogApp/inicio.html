@@ -1,0 +1,24 @@
+{% extends 'ProyectoBlogApp/padre.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'ProyectoBlogApp/assets/img/04.jpg' %}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Para los amantes de los Videojuegos</h2>
+                    <p>Se parte del mayor conglomerado de eventos competitivos de videojuegos. Demuestra tus habilidades. Se parte de la acción y gana increibles premios. Además del prestigio de ganarle a los mejores.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+{% endblock %}

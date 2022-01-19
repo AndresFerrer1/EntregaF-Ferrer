@@ -1,0 +1,34 @@
+{% extends 'ProyectoBlogApp/padre2.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Busqueda de Evento</h1>
+
+            <form action="/ProyectoBlogApp/buscar/" method="GET">
+
+                <p><input type="number" name="nombre" id="nombre"></p>
+            
+                <input type="submit" value="Buscar">
+            
+            </form>
+
+            </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+<body>
+
+</body>
+
+    
+{% endblock %}
