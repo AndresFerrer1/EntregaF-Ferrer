@@ -17,14 +17,6 @@ def agradecimiento(req):
 
     return render(req, 'ProyectoBlogApp/agradecimiento.html')
 
-# def crea_videojuego(req, nombre, plataforma):
-
-#     juego = VideoJuego(nombre=nombre, plataforma=plataforma)
-    
-#     juego.save()
-
-#     return HttpResponse(f'Se creo el videojuego {juego.nombre} en la plataforma {juego.plataforma}')
-
 def eventoformulario(req):
 
     if(req.method == 'POST'):
@@ -100,10 +92,6 @@ def buscar(req):
 
         return render(req, 'ProyectoBlogApp/errorformulario.html')
 
-        # return render(HttpResponse(f'No enviaste datos'))
-
-        # return HttpResponse(f'No enviaste datos')
-
 def buscarparticipante(req):
 
     return render(req, 'ProyectoBlogApp/buscarparticipante.html')
@@ -121,10 +109,6 @@ def buscarparticipante2(req):
 
         return render(req, 'ProyectoBlogApp/errorformulario.html')
 
-        # return render(HttpResponse(f'No enviaste datos'))
-
-        # return HttpResponse(f'No enviaste datos')
-
 def buscareventosugerido(req):
 
     return render(req, 'ProyectoBlogApp/buscareventosug.html')
@@ -141,7 +125,3 @@ def buscareventosug2(req):
     else:
 
         return render(req, 'ProyectoBlogApp/errorformulario.html')
-
-        # return render(HttpResponse(f'No enviaste datos'))
-
-        # return HttpResponse(f'No enviaste datos')
