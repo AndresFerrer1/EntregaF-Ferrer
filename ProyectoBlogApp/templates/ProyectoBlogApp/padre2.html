@@ -21,33 +21,57 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        
+        <nav class="navbar navbar-light bg-light static-top ">
             <div class="container px-5">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" href={% url 'Inicio' %}>Inicio</a>
+                    
+                    <a class="nav-link" href="{% url 'crearparticipante' %}">Inscripcion a Evento</a>
+                    <a class="nav-link" href="{% url 'plataforma' %}">Plataformas disponibles</a>
+                    <a class="nav-link" href="{% url 'evento' %}">Eventos Disponibles</a>
+                    <a class="nav-link" href="{% url 'eventoformulario' %}">Sugerir Eventos</a>
+            </div>
+            <div class="container px-5">
+                <a class="nav-link" href="{% url 'buscarevento' %}">Busqueda de Eventos</a>
+                <a class="nav-link" href="{% url 'buscarparticipante' %}">Busqueda de Participantes</a>
+                <a class="nav-link" href="{% url 'buscareventosugerido' %}">Busqueda de Eventos Sugeridos</a>
+                {% if not request.user.is_authenticated %}                           
+                <p>Perfil<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></p>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        
-                        <li class="nav-item"><a class="nav-link" href="{% url 'crearparticipante' %}">Inscripcion a Evento</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'plataforma' %}">Plataformas disponibles</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'evento' %}">Eventos Disponibles</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'buscarevento' %}">Busqueda de Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'buscarparticipante' %}">Busqueda de Participantes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'eventoformulario' %}">Sugerir Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'buscareventosugerido' %}">Busqueda de Eventos Sugeridos</a></li>
+                    <ul class="navbar-nav ms-auto" style="text-align:right;">
+                    <li><a class="btn btn-primary" href={% url 'Login' %}>Login</a></li>
+                    <li><a class="btn btn-primary" href={% url 'Register' %}>Registro</a></li>
                     </ul>
                 </div>
-            </div>
+                {% endif %}
+
+
+                {% if request.user.is_authenticated %}
+                <p> <p class="text-muted small mb-4 mb-lg-0"> Hola, {{user.username}}!!</p> 
+                    <img height="40px" src="{{url}}" onerror="this.onerror=null" href="{% static 'ProyectoBlogApp/assets/img/user.jpg' %)" > 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span></button> </p>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto" style="text-align:right;">
+                        <li><a class="btn btn-primary" href={% url 'Perfil' %}>Ver Perfil</a></li>                           
+                        <li><a class="btn btn-primary" href={% url 'EditarPerfil' %}>Editar Perfil</a></li>
+                        <li><a class="btn btn-primary" href={% url 'AgregarAvatar' %}>Editar Avatar</a></li>
+                        <li><a class="btn btn-primary" href={% url 'Logout' %}>Logout</a></li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>                               
         </nav>
 
         {% block contenido %}
-        
-                    
+    
         {% endblock %}
 
-        <!-- Footer-->
         <footer class="py-5 bg-black">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; 2021</p></div>
+            <div class="container px-5">
+                    <p class="m-0 text-center text-white small"> World Game Event. All Rights Reserved. &copy; 2021</p>
+                    <a class="navbar-brand" href={% url 'Inicio' %}>Inicio</a>  <a class="navbar-brand" href={% url 'Inicio' %}> About</a>  <a class="navbar-brand" href={% url 'crearcontacto' %}> Contacto</a>
+                </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

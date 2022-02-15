@@ -14,3 +14,7 @@ admin.site.register(Plataforma)
 admin.site.register(Evento)
 
 admin.site.register(EventoSugerido)
+
+admin.site.register(Avatar)
+
+admin.site.register(Contact)

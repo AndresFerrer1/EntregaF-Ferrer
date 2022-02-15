@@ -1,0 +1,36 @@
+{% extends 'ProyectoBlogApp/padre2.html' %}
+
+{% load static %}
+    
+{% block contenido %}
+
+<h3>Agregar Avatar</h3>
+
+    <h3>Modificar Avatar</h3> 
+    <ul>
+        {% for avatar in object_list %}
+
+        <li>
+            <p>Avatar: {{ avatar.user }}</p>
+            {% if avatar.imagen %}
+                <img src='{{ avatar.imagen.url }}' height="40px">
+
+            {% else %}
+
+            <img style="max-width: 100%; max-height: 100%;" height="40px" src="{% static 'ProyectoBlogApp/assets/img/user.jpg' %}">
+
+            {% endif %}              
+            </p>
+            
+            <p> 
+                
+                <a href="{% url 'actualizarAvatar' avatar.id %}">Editar</a> | <a href="{% url 'DeleteAvatar' avatar.id %}">Borrar</a> 
+
+                
+            </p> 
+        </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

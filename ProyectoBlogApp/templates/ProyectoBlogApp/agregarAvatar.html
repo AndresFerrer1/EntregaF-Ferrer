@@ -1,0 +1,19 @@
+{% extends 'ProyectoBlogApp/padre2.html' %}
+
+{% load static %}
+    
+{% block contenido %}
+
+    <h3>Cargar avatar</h3>
+    <form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{miFormulario.as_p}}
+
+    <input type="submit" value="Cargar">
+
+    </form>
+
+
+
+{% endblock %}
