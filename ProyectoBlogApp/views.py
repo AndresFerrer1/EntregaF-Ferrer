@@ -452,3 +452,15 @@ class BorrarPost(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = "/ProyectoBlogApp/listaPost"
     template_name = "ProyectoBlogApp/post_confirm_delete.html"
+
+
+# Area acerca de mi
+
+def aboutMe(req):
+
+    avatar = Avatar.objects.filter(user=req.user.id) 
+
+    try:
+        return render(req, 'ProyectoBlogApp/aboutMe.html', {"url":avatar[0].imagen.url})
+    except:
+        return render(req, 'ProyectoBlogApp/aboutMe.html', {"url":""})
