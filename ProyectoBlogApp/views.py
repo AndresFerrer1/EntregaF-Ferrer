@@ -419,3 +419,36 @@ def contacto_gracias(req):
         return render(req, 'ProyectoBlogApp/contacto_gracias.html', {'mensaje1':mensaje1,"url":avatar[0].imagen.url})
     except:
         return render(req, 'ProyectoBlogApp/contacto_gracias.html', {'mensaje1':mensaje1,"url":""})
+
+
+
+
+# Area Post
+
+class VistaPost(ListView):
+    model = Post
+    template_name = 'ProyectoBlogApp/listaPost.html'
+    ordering = ['fecha_post']
+    context_object_name = 'post'  # Default: object_list
+    paginate_by = 2
+    queryset = Post.objects.all()  # Default: Model.objects.all()
+
+class DetallePost(DetailView):
+    model = Post
+    template_name = 'ProyectoBlogApp/detallePost.html'
+
+class CrearPost(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['titulo', 'etiqueta_titulo', 'autor', 'body', 'imagen']
+    success_url = "/ProyectoBlogApp/listaPost"
+
+class ActualizarPost(LoginRequiredMixin, UpdateView):
+
+    model = Post
+    success_url = "/ProyectoBlogApp/listaPost"
+    fields = ['titulo', 'etiqueta_titulo', 'body', 'imagen']
+
+class BorrarPost(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = "/ProyectoBlogApp/listaPost"
+    template_name = "ProyectoBlogApp/post_confirm_delete.html"

@@ -16,6 +16,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'ProyectoBlogApp/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'ProyectoBlogApp/css/styles2.css' %}" rel="stylesheet" />
+        <link href="{% static 'ProyectoBlogApp/css/styles3.css' %}" rel="stylesheet" />
 
         
     </head>
@@ -34,6 +36,7 @@
                 <a class="nav-link" href="{% url 'buscarevento' %}">Busqueda de Eventos</a>
                 <a class="nav-link" href="{% url 'buscarparticipante' %}">Busqueda de Participantes</a>
                 <a class="nav-link" href="{% url 'buscareventosugerido' %}">Busqueda de Eventos Sugeridos</a>
+                <a class="nav-link" href="{% url 'listaPost' %}">Lista de Posts</a>
                 {% if not request.user.is_authenticated %}                           
                 <p>Acceder<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></p>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -55,6 +58,7 @@
                         <li><a class="btn btn-primary" href={% url 'Perfil' %}>Ver Perfil</a></li>                           
                         <li><a class="btn btn-primary" href={% url 'EditarPerfil' %}>Editar Perfil</a></li>
                         <li><a class="btn btn-primary" href={% url 'AgregarAvatar' %}>Editar Avatar</a></li>
+                        <li><a class="btn btn-primary" href={% url 'CrearPost' %}>Crear Post</a></li>
                         <li><a class="btn btn-primary" href={% url 'Logout' %}>Logout</a></li>
                     </ul>
                 </div>

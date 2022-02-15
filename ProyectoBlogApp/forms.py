@@ -51,3 +51,8 @@ class ContactoFormumlario(forms.Form):
     apellido = forms.CharField(required=True, max_length=30)
     asunto = forms.CharField(required=True, max_length=100)
     mensaje = forms.CharField(widget=forms.Textarea, required=True, max_length=10000)
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = '__all__'

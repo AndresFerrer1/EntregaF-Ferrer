@@ -18,3 +18,5 @@ admin.site.register(EventoSugerido)
 admin.site.register(Avatar)
 
 admin.site.register(Contact)
+
+admin.site.register(Post)
