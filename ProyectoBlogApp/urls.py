@@ -11,6 +11,7 @@ urlpatterns = [
     path('buscarparticipante2/', views.buscarparticipante2, name="buscarparticipante2"),
     path('bienvenida/', views.bienvenida, name="bienvenida"),
     path('evento/', views.evento, name="evento"),
+    path('eventosug/', views.eventosugeridos, name="eventosug"),
     path('buscarevento/', views.buscarevento, name="buscarevento"),
     path('buscar/', views.buscar, name="buscar"),
     path('errorformulario/', views.errorformulario, name="errorformulario"),

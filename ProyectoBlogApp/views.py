@@ -135,6 +135,17 @@ def evento(req):
     except:
         return render(req, 'ProyectoBlogApp/evento.html', {"lista": lista, "url":""})
 
+def eventosugeridos(req):
+
+    avatar = Avatar.objects.filter(user=req.user.id)
+
+    lista = EventoSugerido.objects.all()
+
+    try:
+        return render(req, 'ProyectoBlogApp/eventosug_lista.html', {"lista": lista, "url":avatar[0].imagen.url})
+    except:
+        return render(req, 'ProyectoBlogApp/eventosug_lista.html', {"lista": lista, "url":""})
+
 def buscarevento(req):
 
     avatar = Avatar.objects.filter(user=req.user.id)

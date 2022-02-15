@@ -25,17 +25,18 @@
         <nav class="navbar navbar-light bg-light static-top ">
             <div class="container px-5">
                 <a class="navbar-brand" href={% url 'Inicio' %}>Inicio</a>
-                    
-                    <a class="nav-link" href="{% url 'crearparticipante' %}">Inscripcion a Evento</a>
                     <a class="nav-link" href="{% url 'plataforma' %}">Plataformas disponibles</a>
                     <a class="nav-link" href="{% url 'evento' %}">Eventos Disponibles</a>
                     <a class="nav-link" href="{% url 'eventoformulario' %}">Sugerir Eventos</a>
+                    <a class="nav-link" href="{% url 'eventosug' %}">Lista de sugeridos</a>
             </div>
             <div class="container px-5">
                 <a class="nav-link" href="{% url 'buscarevento' %}">Busqueda de Eventos</a>
                 <a class="nav-link" href="{% url 'buscarparticipante' %}">Busqueda de Participantes</a>
                 <a class="nav-link" href="{% url 'buscareventosugerido' %}">Busqueda de Eventos Sugeridos</a>
                 <a class="nav-link" href="{% url 'listaPost' %}">Lista de Posts</a>
+                
+
                 {% if not request.user.is_authenticated %}                           
                 <p>Perfil<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></p>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -57,6 +58,7 @@
                         <li><a class="btn btn-primary" href={% url 'Perfil' %}>Ver Perfil</a></li>                           
                         <li><a class="btn btn-primary" href={% url 'EditarPerfil' %}>Editar Perfil</a></li>
                         <li><a class="btn btn-primary" href={% url 'AgregarAvatar' %}>Editar Avatar</a></li>
+                        <li><a class="btn btn-primary" href={% url 'crearparticipante' %}>Inscripcion a Evento</a></li>
                         <li><a class="btn btn-primary" href={% url 'CrearPost' %}>Crear Post</a></li>
                         <li><a class="btn btn-primary" href={% url 'Logout' %}>Logout</a></li>
                     </ul>
