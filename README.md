@@ -1,4 +1,9 @@
 # EntregaF-Ferrer
+
+Andres Ferrer Rocha
+
+Esta app fue creada por mi.
+
 Proyecto Python Coder
 
 Se trara de una pagina web sobre eventos de videojuegos.
