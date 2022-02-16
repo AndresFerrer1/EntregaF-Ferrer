@@ -328,7 +328,10 @@ def editarPerfil(req):
             usuario.last_name = informacion['last_name']
             usuario.save()
 
-            return render(req, "ProyectoBlogApp/inicio.html", {'url': avatar[0].imagen.url, 'url':avatar})
+            try:
+                return render(req, 'ProyectoBlogApp/inicio.html', {"usuario":usuario,"url":avatar[0].imagen.url})
+            except:
+                return render(req, 'ProyectoBlogApp/inicio.html', {"usuario":usuario,"url":""})  
 
     else:
 
